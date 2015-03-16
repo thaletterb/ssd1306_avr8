@@ -141,7 +141,7 @@ void i2c_stop(void)
 	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
 	
 	// wait until stop condition is executed and bus released
-	while(TWCR & (1<<TWSTO));
+	//while(TWCR & (1<<TWSTO)); //SSD1306 is cheap and doesn't acknowledge a stop condition
 
 }/* i2c_stop */
 
